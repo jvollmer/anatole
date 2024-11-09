@@ -38,5 +38,9 @@
     {{- if (eq .Site.Params.simpleAnalytics.enable true) -}}
       {{- partial "analytics/simpleanalytics.html" . -}}
     {{- end -}}
+
+    {{ if and .Site.Params.goatCounter .Site.Params.goatCounter.code }}
+      {{- partial "analytics/goatcounter" . -}}
+    {{ end }}
   </body>
 </html>
